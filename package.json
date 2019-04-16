@@ -1,9 +1,12 @@
 {
   "name": "webpack-error-on-warnings-plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Generates errors in a webpack build when there are warnings",
   "main": "index.js",
   "repository": "git@github.com:hedgepigdaniel/webpack-error-on-warnings-plugin.git",
   "author": "Daniel Playfair Cal <daniel.playfair.cal@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  }
 }
