@@ -1,4 +1,4 @@
-module.expports = (api) => {
+module.exports = (api) => {
   const esModules = api.env((envName) => envName.indexOf('es') !== -1);
   return {
     presets: [
