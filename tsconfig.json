@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "./ts",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true
+  },
+  "include": ["src"]
+}

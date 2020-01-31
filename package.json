@@ -2,11 +2,40 @@
   "name": "webpack-error-on-warnings-plugin",
   "version": "2.0.0",
   "description": "Generates errors in a webpack build when there are warnings",
-  "main": "index.js",
   "repository": "git@github.com:hedgepigdaniel/webpack-error-on-warnings-plugin.git",
   "author": "Daniel Playfair Cal <daniel.playfair.cal@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build-cjs": "babel --source-maps true -x .ts src/ -d cjs",
+    "build-es": "babel --source-maps true --env-name es -x .ts src/ -d es",
+    "build-ts": "tsc",
+    "build": "yarn run build-cjs && yarn run build-es && yarn run build-ts",
+    "clean": "rimraf cjs es ts",
+    "prepare": "yarn run clean && yarn run build"
+  },
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "types": "ts/index.d.ts",
+  "files": [
+    "cjs",
+    "es",
+    "ts"
+  ],
   "peerDependencies": {
     "webpack": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "@types/webpack": "^4.41.3"
   }
 }
