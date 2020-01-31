@@ -1,6 +1,6 @@
 import { Plugin } from 'webpack';
 
-export default class ErrorOnWarningsPlugin extends Plugin {
+export default class ErrorOnWarningsPlugin implements Plugin {
   apply(compiler) {
     compiler.hooks.shouldEmit.tap('ErrorOnWarningsPlugin', (compilation) => {
       let result;
